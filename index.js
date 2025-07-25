@@ -2,8 +2,9 @@ import express from 'express';
 import path from 'path';
 
 const app = express();
-app.use(express.static('public'));        // serve static files
-app.get('/', (_, res) =>
+app.use(express.static('public'));
+
+app.get('/', (_req, res) =>
   res.sendFile(path.resolve('public/index.html'))
 );
 
